@@ -1,0 +1,39 @@
+{
+  "name": "website-optimization",
+  "version": "1.0.0",
+  "description": "FEWD 11 project",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.8.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-inline-source": "^3.1.0",
+    "gulp-jimp-resize": "^2.0.2",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-wait": "0.0.2",
+    "jimp": "^0.2.28",
+    "postcss-zindex": "^2.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meganoliver/website-optimization.git"
+  },
+  "keywords": [
+    "website",
+    "optimization"
+  ],
+  "author": "Megan Oliver",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meganoliver/website-optimization/issues"
+  },
+  "homepage": "https://github.com/meganoliver/website-optimization#readme"
+}
