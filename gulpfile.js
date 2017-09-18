@@ -1,97 +1,87 @@
 'use strict';
 
-var gulp = require('gulp'),
- concat = require('gulp-concat'),
- uglify = require('gulp-uglify'),
- rename = require('gulp-rename'),
- cleanCSS = require('gulp-clean-css'),
- del = require('del'),
- postcss = require('gulp-postcss'),
- autoprefixer = require('autoprefixer'),
- postcssZindex = require('postcss-zindex'),
- inlinesource = require('gulp-inline-source'),
- wait = require('gulp-wait');
+var gulp 	= require('gulp'),
+	concat 	= require('gulp-concat'),
+	uglify	= require('gulp-uglify'),
+	uglifycss = require('gulp-uglifycss'),
+	rename	= require('gulp-rename'),
+	del 	= require('del'),
+	postcss = require('gulp-postcss'),
+	autoprefixer = require('autoprefixer'),
+	cssnext = require('postcss-cssnext'),
+	shortcase = require('postcss-short');
 
-
+//JS
 gulp.task("concatScripts", function() {
-	return gulp.src([	
-					"js/jquery.js",
-					"js/foundation.js",
-					"js/foundation.equalizer.js",
-					"js/foundation.reveal.js",
-					"js/fastclick.js"
-					])
+	return gulp.src([
+			"js/jquery.js",
+			"js/fastclick.js",
+			"js/foundation.js",
+			"js/foundation.equalizer.js",
+			"js/foundation.reveal.js"
+			])
+
 	.pipe(concat("app.js"))
 	.pipe(gulp.dest("js"));
 });
 
 gulp.task("minifyScripts", ["concatScripts"], function() {
-	return gulp.src('js/app.js')
+	return gulp.src("js/app.js")
 	.pipe(uglify())
 	.pipe(rename('app.min.js'))
-	.pipe(gulp.dest('js'));
+	.pipe(gulp.dest("js"));
+});
+
+//CSS
+gulp.task("processCSS", function() {
+	var plugins = [
+		shortcase,
+		cssnext,
+		autoprefixer ({
+			browsers:['last 3 versions'], cascade: false})
+	];
+	return gulp.src('css/*')
+	.pipe(postcss(plugins))
+	.pipe(gulp.dest('css'))
 });
 
 gulp.task("concatCSS", function() {
-	return gulp.src(['css/*.css'])
+	return gulp.src([
+			"css/basics.css",
+			"css/footer.css",
+			"css/foundation.min.css",
+			"css/hero.css",
+			"css/menu.css",
+			"css/modals.css",
+			"css/normalize.css",
+			"css/photo-grid.css"
+		])
+
 	.pipe(concat("application.css"))
 	.pipe(gulp.dest("css"));
 });
 
-gulp.task('processCSS', function() {
-	var plugins = [
-	autoprefixer({
-		browsers: ['last 3 versions']
-	}),
-	postcssZindex({startIndex: 1})
-	];
-	return gulp.src('css/*.css')
-	.pipe(postcss(plugins))
-	.pipe(gulp.dest('./dist'));
-});
-
 gulp.task("minifyCSS", ["concatCSS"], function() {
-	return gulp.src('css/application.css')
-	.pipe(cleanCSS())
+	return gulp.src("css/application.css")
+	.pipe(uglifycss())
 	.pipe(rename('application.min.css'))
 	.pipe(gulp.dest("css"));
 });
 
-gulp.task('inlinesource', function() {
-	return gulp.src('*.html')
-	.pipe(wait(7000))
-	.pipe(inlinesource())
-	.pipe(gulp.dest('./dist'))
+gulp.task("clean", function() {
+	del(['dist', 'js/app.js', 'css/application.css'])
 });
 
-
-gulp.task('clean', function() {
-	del(['dist', 'css/application.css', 'css/application.min.css', 'js/app.js', 'js/app.min.js']);
-});
-
-gulp.task('watchFiles',function() {
-	gulp.watch(['css/*.css'], ['concatCSS'])
-	gulp.watch(['js/*.js'], ['concatScripts']);
-});
-
-gulp.task('serve', ['watchFiles']);
-
-gulp.task("build", ['minifyCSS', 'minifyScripts', 'processCSS', 'inlinesource'], function() {
+gulp.task("build", ["minifyScripts", "minifyCSS"], function() {
 	return gulp.src([
-			'index.html',
-			'css/application.min.css',
-			'js/app.min.js',
-			'img/**/*.*',
-			'css/**/*.ttf'
-		], {base:'./'})
+			"css/application.min.css",
+			"js/app.min.js",
+			"index.html",
+			"img/**/*",
+		], {base: './'})
 	.pipe(gulp.dest('dist'));
 });
 
-gulp.task("default", ["clean"], function() {
+gulp.task("default", ['clean'], function() {
 	gulp.start('build');
 });
-
-
-
-
-

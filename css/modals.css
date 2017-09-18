@@ -1,9 +1,11 @@
 .reveal-modal .info {
+    padding: 32px 16px 0;
+    padding: 32px 16px 0;
     padding: 2rem 1rem 0;
 }
 .reveal-modal .info .attribution {
     color: rgb(73, 85, 96);
-    font-family: "Ubuntu";
+    font-family: "Ubuntu", sans-serif;
     line-height: 75px;
 }
 .reveal-modal .info .attribution b {
@@ -13,6 +15,8 @@
     border-radius: 50%;
     float: left;
     height: 75px;
+    margin-right: 16px;
+    margin-right: 16px;
     margin-right: 1rem;
     width: 75px;
 }

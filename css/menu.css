@@ -1,10 +1,14 @@
 .menu {
     background-color: rgb(239, 240, 241);
     font-family: "Arvo", serif;
+    padding: 24px 48px;
+    padding: 24px 48px;
     padding: 1.5rem 3rem;
     height: auto;
 }
 .menu .inline-list {
+    padding-top: 16px;
+    padding-top: 16px;
     padding-top: 1rem;
     text-align: center;
 }
@@ -14,13 +18,19 @@
 }
 .menu .inline-list a {
     color: rgb(72, 84, 97);
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 2px;
+    letter-spacing: 2px;
     letter-spacing: 0.125rem;
+    padding-bottom: 8px;
+    padding-bottom: 8px;
     padding-bottom: 0.5rem;
     text-transform: uppercase;
 }
 .menu .inline-list a:hover {
     color: rgb(82, 202, 109);
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
 .menu .inline-list .active a {
@@ -37,9 +47,13 @@
 }
 .menu .account {
     float: right;
+    margin: -12px 0 0 0;
+    margin: -12px 0 0 0;
     margin: -.75rem 0 0 0;
 }
 .menu .account li {
+    margin-left: 3.2px;
+    margin-left: 3.2px;
     margin-left: .2rem;
 }
 .menu .account a {
@@ -49,7 +63,11 @@
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
     letter-spacing: normal;
+    margin-left: 8px;
+    margin-left: 8px;
     margin-left: 0.5rem;
+    padding: 8px 24px;
+    padding: 8px 24px;
     padding: 0.5rem 1.5rem;
     text-transform: none;
 }
@@ -62,19 +80,29 @@
     background: url('../img/logo.png') no-repeat top left;
     background-size: contain;
     font-family: "Arvo", serif;
+    font-size: 32px;
+    font-size: 32px;
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 700;
     line-height: 1;
+    margin: 0 0 16px 0;
+    margin: 0 0 16px 0;
     margin: 0 0 1rem 0;
     color: rgb(72, 84, 97);
+    text-indent: -159999984px;
+    text-indent: -159999984px;
     text-indent: -9999999rem;
     overflow: hidden;
+    width: 640px;
+    width: 640px;
     width: 40rem;
+    height: 48px;
+    height: 48px;
     height: 3rem;
 }
 .menu .logo b {
     color: rgb(47, 171, 206);
-    font-family: "Ubuntu";
+    font-family: "Ubuntu", sans-serif;
 }
 @media only screen and (min-width: 40.063em) {
     .logo {

@@ -2,7 +2,11 @@
     background: url("../img/photos/photo4.jpg") no-repeat center center;
     background-size: cover;
     height: 60vh;
+    margin-bottom: 16px;
+    margin-bottom: 16px;
     margin-bottom: 1rem;
+    padding: 24px 48px;
+    padding: 24px 48px;
     padding: 1.5rem 3rem;
 }
 .hero .info {
@@ -11,7 +15,9 @@
 }
 .hero .info .attribution {
     color: rgb(235, 236, 237);
-    font-family: "Ubuntu";
+    font-family: "Ubuntu", sans-serif;
+    font-size: 15.2px;
+    font-size: 15.2px;
     font-size: 0.95rem;
     float: left;
     text-align: right;
@@ -25,6 +31,8 @@
     border-radius: 50%;
     float: right;
     height: 50px;
+    margin-left: 16px;
+    margin-left: 16px;
     margin-left: 1rem;
     width: 50px;
 }

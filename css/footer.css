@@ -1,4 +1,6 @@
 footer {
+    padding: 24px 48px;
+    padding: 24px 48px;
     padding: 1.5rem 3rem;
 }
 footer .row {
@@ -16,8 +18,12 @@ footer .social img {
 }
 footer p {
     color: rgb(125, 136, 146);
-    font-family: "Ubuntu";
+    font-family: "Ubuntu", sans-serif;
+    font-size: 15.2px;
+    font-size: 15.2px;
     font-size: 0.95rem;
     font-weight: 300;
+    padding-top: 8px;
+    padding-top: 8px;
     padding-top: 0.5rem;
 }
