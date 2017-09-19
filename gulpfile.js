@@ -9,7 +9,21 @@ var gulp 	= require('gulp'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
 	cssnext = require('postcss-cssnext'),
-	shortcase = require('postcss-short');
+	shortcase = require('postcss-short'),
+	spritesmith = require('gulp.spritesmith');
+
+
+//IMG
+
+gulp.task('sprite', function() {
+	var spriteData = gulp.src('img/avatars/*.jpg')
+	.pipe(spritesmith({
+		imgName: 'thumbs.png',
+		cssName: 'thumbs.css'
+	}));
+	return spriteData.pipe(gulp.dest('./img/sprite/'));
+});
+
 
 //JS
 gulp.task("concatScripts", function() {
@@ -19,6 +33,7 @@ gulp.task("concatScripts", function() {
 			"js/foundation.js",
 			"js/foundation.equalizer.js",
 			"js/foundation.reveal.js"
+			
 			])
 
 	.pipe(concat("app.js"))
@@ -54,7 +69,8 @@ gulp.task("concatCSS", function() {
 			"css/menu.css",
 			"css/modals.css",
 			"css/normalize.css",
-			"css/photo-grid.css"
+			"css/photo-grid.css",
+			"css/avatars.css"
 		])
 
 	.pipe(concat("application.css"))
@@ -69,7 +85,7 @@ gulp.task("minifyCSS", ["concatCSS"], function() {
 });
 
 gulp.task("clean", function() {
-	del(['dist', 'js/app.js', 'css/application.css'])
+	del(['dist', 'js/app.js', 'css/application.css', 'js/app.min.js', 'css/application.min.css'])
 });
 
 gulp.task("build", ["minifyScripts", "minifyCSS"], function() {

@@ -1,0 +1,47 @@
+.icon-avatar1,
+.icon-avatar2,
+.icon-avatar3,
+.icon-avatar4,
+.icon-avatar5,
+.icon-avatar6,
+.icon-avatar7 {
+	background-image: url('../img/sprite/thumbs.png');
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 50px;
+
+.icon-avatar1 {
+	background-position: -180px 0px;
+	width: 150px;
+	height: 150px;
+}
+
+.icon-avatar3 {
+	background-position: 0px 0px;
+	width: 180px;
+	height: 180px;
+}
+
+.icon-avatar4 {
+	background-position: 0px -180px;
+	width: 150px;
+	height: 150px;
+}
+
+.icon-avatar5 {
+	background-position: -150px -180px;
+	width: 150px;
+	height: 150px;
+}
+
+.icon-avatar6 {
+	background-position: -330px 0px;
+	width: 150px;
+	height: 150px;
+}
+
+.icon-avatar7 {
+	background-position: -330px -150px;
+	width: 150px;
+	height: 150px;
+}
