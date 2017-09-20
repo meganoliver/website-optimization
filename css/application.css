@@ -197,11 +197,11 @@ meta.foundation-version{font-family:"/5.5.3/"}meta.foundation-mq-small{font-fami
 .reveal-modal .info .avatar {
     border-radius: 50%;
     float: left;
-    height: 75px;
+    height: 50px;
     margin-right: 16px;
     margin-right: 16px;
     margin-right: 1rem;
-    width: 75px;
+    width: 50px;
 }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -707,37 +707,36 @@ th {
 }
 
 .icon-avatar1 {
-	background-position: -180px 0px;
-	width: 150px;
-	height: 150px;
+	background-position: 0px 0px;
+	
+}
+
+.icon-avatar2 {
+	background-position: -50px 0px;
+	width: 25px;
+	height: 25px;
 }
 
 .icon-avatar3 {
-	background-position: 0px 0px;
-	width: 180px;
-	height: 180px;
-}
-
-.icon-avatar4 {
-	background-position: 0px -180px;
+	background-position: 0px -50px;
 	width: 150px;
 	height: 150px;
 }
 
 .icon-avatar5 {
-	background-position: -150px -180px;
+	background-position: -50px -50px;
 	width: 150px;
 	height: 150px;
 }
 
 .icon-avatar6 {
-	background-position: -330px 0px;
+	background-position: -100px 0px;
 	width: 150px;
 	height: 150px;
 }
 
 .icon-avatar7 {
-	background-position: -330px -150px;
+	background-position: -100px -50px;
 	width: 150px;
 	height: 150px;
 }
