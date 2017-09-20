@@ -33,7 +33,6 @@ gulp.task("concatScripts", function() {
 			"js/foundation.js",
 			"js/foundation.equalizer.js",
 			"js/foundation.reveal.js"
-			
 			])
 
 	.pipe(concat("app.js"))
