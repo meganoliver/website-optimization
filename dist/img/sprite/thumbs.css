@@ -49,6 +49,6 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 .icon-avatar7 {
   background-image: url(thumbs.png);
   background-position: -330px -150px;
-  width: 150px;
-  height: 150px;
+  width: 50px;
+  height: 50px;
 }
